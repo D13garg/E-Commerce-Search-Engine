@@ -1,0 +1,46 @@
+{
+  "name": "snitch",
+  "display_name": "Snitch",
+  "base_url": "https://www.snitch.co.in",
+  "platform": "shopify",
+  "currency": "INR",
+  "discovery": {
+    "method": "shopify_collection_api",
+    "collection_handle": "all",
+    "page_size": 250
+  },
+  "field_map": {
+    "title": "title",
+    "brand": "vendor",
+    "slug": "handle",
+    "sku": "variants[0].sku",
+    "image": "images[0].src",
+    "category": "product_type"
+  },
+  "variant_options": {
+    "size_option": "option2",
+    "shipping_keywords": [
+      "shipping",
+      "ship",
+      "instant",
+      "same day",
+      "days",
+      "hours",
+      "eta"
+    ]
+  },
+  "category_map": {
+    "trousers": "Bottomwear",
+    "jeans": "Bottomwear",
+    "t-shirts": "Topwear",
+    "shirts": "Topwear",
+    "co-ords": "Co-ords",
+    "shorts": "Bottomwear",
+    "hoodies": "Topwear",
+    "jackets": "Outerwear"
+  },
+  "crawl": {
+    "delay_seconds": 1.0,
+    "max_retries": 3
+  }
+}

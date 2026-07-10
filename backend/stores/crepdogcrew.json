@@ -1,0 +1,44 @@
+{
+  "name": "crepdogcrew",
+  "display_name": "Crepdog Crew",
+  "base_url": "https://crepdogcrew.com",
+  "platform": "shopify",
+  "currency": "INR",
+  "discovery": {
+    "method": "shopify_collection_api",
+    "collection_handle": "all",
+    "page_size": 250
+  },
+  "field_map": {
+    "title": "title",
+    "brand": "vendor",
+    "slug": "handle",
+    "sku": "variants[0].sku",
+    "image": "images[0].src",
+    "category": "product_type"
+  },
+  "variant_options": {
+    "size_option": "option1",
+    "shipping_keywords": [
+      "shipping",
+      "ship",
+      "instant",
+      "same day",
+      "days",
+      "hours",
+      "eta"
+    ]
+  },
+  "category_map": {
+    "sneakers": "Sneakers",
+    "basketball sneakers": "Sneakers",
+    "streetwear t-shirt": "Apparel",
+    "hoodies": "Apparel",
+    "slides": "Slides",
+    "bags": "Bags"
+  },
+  "crawl": {
+    "delay_seconds": 1.0,
+    "max_retries": 3
+  }
+}

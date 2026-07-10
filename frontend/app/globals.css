@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Tokens ──────────────────────────────────────────────────────────────── */
+:root {
+  --bg:           #060608;
+  --bg-2:         #0a0a0d;
+  --surface:      #0d0d10;
+  --surface-2:    #111115;
+  --surface-3:    #16161a;
+  --border:       #1c1c22;
+  --border-2:     #252530;
+  --border-3:     #303038;
+  --accent:       #ff3d00;
+  --accent-glow:  rgba(255,61,0,0.15);
+  --accent-dim:   rgba(255,61,0,0.08);
+  --yellow:       #e8ff00;
+  --yellow-dim:   rgba(232,255,0,0.08);
+  --green:        #22c55e;
+  --green-dim:    rgba(34,197,94,0.08);
+  --text:         #f0f0f2;
+  --text-2:       #8a8a96;
+  --text-3:       #44444e;
+  --text-4:       #26262e;
+  --radius:       6px;
+  --radius-sm:    3px;
+  --radius-lg:    10px;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono:    'DM Mono', monospace;
+  --font-body:    'Inter', sans-serif;
+}
+
+/* ── Base ────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 2px; }
+
+/* ── Animations ──────────────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.25; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+@keyframes borderPulse {
+  0%, 100% { border-color: var(--border); }
+  50%       { border-color: var(--border-2); }
+}
+
+.animate-fade-up { animation: fadeUp 0.3s ease forwards; }
+.animate-fade-in { animation: fadeIn 0.2s ease forwards; }
+.animate-ticker  { animation: ticker 40s linear infinite; }
+.pulse-dot       { animation: pulse-dot 2s ease-in-out infinite; }
+
+/* ── Skeleton ────────────────────────────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg,
+    var(--surface) 0%,
+    var(--surface-2) 40%,
+    var(--surface-3) 60%,
+    var(--surface) 100%
+  );
+  background-size: 300% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: var(--radius);
+}
+
+/* ── Price tag ───────────────────────────────────────────────────────────── */
+.price-tag {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  letter-spacing: -0.02em;
+}
+.price-tag.best-price { color: var(--yellow); }
+
+/* ── Store badges ────────────────────────────────────────────────────────── */
+.store-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text-2);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+/* Per-store accent */
+.store-badge.hypefly        { background:rgba(255,61,0,.1);   color:#ff6b35; border-color:rgba(255,61,0,.2); }
+.store-badge.mainstreet     { background:rgba(59,130,246,.1); color:#60a5fa; border-color:rgba(59,130,246,.2); }
+.store-badge.dawntown       { background:rgba(168,85,247,.1); color:#c084fc; border-color:rgba(168,85,247,.2); }
+.store-badge.crepdogcrew    { background:rgba(234,179,8,.1);  color:#fbbf24; border-color:rgba(234,179,8,.2); }
+.store-badge.sneakwear      { background:rgba(20,184,166,.1); color:#2dd4bf; border-color:rgba(20,184,166,.2); }
+.store-badge.hypeelixir     { background:rgba(236,72,153,.1); color:#f472b6; border-color:rgba(236,72,153,.2); }
+.store-badge.kicksmachine   { background:rgba(249,115,22,.1); color:#fb923c; border-color:rgba(249,115,22,.2); }
+.store-badge.yoursneakerstore{background:rgba(99,102,241,.1); color:#818cf8; border-color:rgba(99,102,241,.2); }
+.store-badge.10hillsstudio  { background:rgba(16,185,129,.1); color:#34d399; border-color:rgba(16,185,129,.2); }
+.store-badge.superkicks     { background:rgba(239,68,68,.1);  color:#f87171; border-color:rgba(239,68,68,.2); }
+.store-badge.snitch         { background:rgba(6,182,212,.1);  color:#22d3ee; border-color:rgba(6,182,212,.2); }
+.store-badge.sassafras      { background:rgba(244,63,94,.1);  color:#fb7185; border-color:rgba(244,63,94,.2); }
+.store-badge.chumbak        { background:rgba(245,158,11,.1); color:#fcd34d; border-color:rgba(245,158,11,.2); }
+.store-badge.neemans        { background:rgba(34,197,94,.1);  color:#4ade80; border-color:rgba(34,197,94,.2); }
+.store-badge.minimalist     { background:rgba(241,245,249,.06);color:#cbd5e1;border-color:rgba(241,245,249,.12); }
+.store-badge.mcaffeine      { background:rgba(180,83,9,.15);  color:#d97706; border-color:rgba(180,83,9,.25); }
+.store-badge.plum           { background:rgba(139,92,246,.1); color:#a78bfa; border-color:rgba(139,92,246,.2); }
+.store-badge.sugarpop       { background:rgba(219,39,119,.1); color:#f9a8d4; border-color:rgba(219,39,119,.2); }
+.store-badge.boat           { background:rgba(59,130,246,.1); color:#93c5fd; border-color:rgba(59,130,246,.2); }
+.store-badge.noise          { background:rgba(16,185,129,.1); color:#6ee7b7; border-color:rgba(16,185,129,.2); }
+.store-badge.portronics     { background:rgba(99,102,241,.1); color:#a5b4fc; border-color:rgba(99,102,241,.2); }
+.store-badge.zebronics      { background:rgba(234,179,8,.1);  color:#fde68a; border-color:rgba(202,138,4,.2); }
+.store-badge.crossbeats     { background:rgba(239,68,68,.1);  color:#fca5a5; border-color:rgba(220,38,38,.2); }
+
+/* ── Product card ────────────────────────────────────────────────────────── */
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition:
+    border-color 0.18s ease,
+    transform    0.18s ease,
+    box-shadow   0.18s ease;
+}
+.product-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.2s ease;
+  z-index: 1;
+}
+.product-card:hover {
+  border-color: var(--border-2);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+.product-card:hover::before {
+  transform: scaleY(1);
+}
+.product-card:active { transform: translateY(-1px); }
+
+/* ── Search input ────────────────────────────────────────────────────────── */
+.search-input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+.search-input::placeholder { color: var(--text-3); }
+
+/* ── Filter pills ────────────────────────────────────────────────────────── */
+.filter-pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  color: var(--text-3);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 13px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.filter-pill:hover {
+  border-color: var(--border-2);
+  color: var(--text-2);
+}
+.filter-pill.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ── Divider ─────────────────────────────────────────────────────────────── */
+.divider { border: none; border-top: 1px solid var(--border); }
+
+/* ── Select ──────────────────────────────────────────────────────────────── */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%2344444e' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 28px !important;
+}
+
+/* ── Number stat boxes ───────────────────────────────────────────────────── */
+.stat-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  transition: border-color 0.15s;
+}
+.stat-box:hover { border-color: var(--border-2); }
+
+/* ── Tag / chip ──────────────────────────────────────────────────────────── */
+.chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text-3);
+  border: 1px solid var(--border);
+}

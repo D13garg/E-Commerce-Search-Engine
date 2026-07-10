@@ -1,0 +1,34 @@
+{
+  "name": "dawntown",
+  "display_name": "Dawntown",
+  "base_url": "https://dawntown.co.in",
+  "platform": "shopify",
+  "currency": "INR",
+  "discovery": {
+    "method": "shopify_collection_api",
+    "collection_handle": "all-products",
+    "page_size": 250
+  },
+  "field_map": {
+    "title":    "title",
+    "brand":    "vendor",
+    "slug":     "handle",
+    "sku":      "variants[0].sku",
+    "image":    "images[0].src",
+    "category": "product_type"
+  },
+  "variant_options": {
+    "size_option": "option1",
+    "shipping_keywords": ["shipping", "ship", "instant", "same day", "days", "hours", "eta"]
+  },
+  "category_map": {
+    "sneakers": "Sneakers",
+    "slides":   "Slides",
+    "apparel":  "Apparel",
+    "accessories": "Accessories"
+  },
+  "crawl": {
+    "delay_seconds": 1.0,
+    "max_retries": 3
+  }
+}

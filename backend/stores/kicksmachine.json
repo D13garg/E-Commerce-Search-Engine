@@ -1,0 +1,43 @@
+{
+  "name": "kicksmachine",
+  "display_name": "Kicks Machine",
+  "base_url": "https://www.kicksmachine.com",
+  "platform": "shopify",
+  "currency": "INR",
+  "discovery": {
+    "method": "shopify_collection_api",
+    "collection_handle": "all-sneakers",
+    "page_size": 250
+  },
+  "field_map": {
+    "title": "title",
+    "brand": "vendor",
+    "slug": "handle",
+    "sku": "variants[0].sku",
+    "image": "images[0].src",
+    "category": "product_type"
+  },
+  "variant_options": {
+    "size_option": "option1",
+    "shipping_keywords": [
+      "shipping",
+      "ship",
+      "instant",
+      "same day",
+      "days",
+      "hours",
+      "eta"
+    ]
+  },
+  "category_map": {
+    "sneakers": "Sneakers",
+    "sandals": "Sandals",
+    "boots": "Boots",
+    "slides": "Slides",
+    "loafers": "Loafers"
+  },
+  "crawl": {
+    "delay_seconds": 1.0,
+    "max_retries": 3
+  }
+}

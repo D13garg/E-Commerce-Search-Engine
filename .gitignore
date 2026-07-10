@@ -1,0 +1,59 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+*.egg
+
+# ── Virtual Environment ───────────────────────────────────────────────────────
+venv/
+env/
+ENV/
+.venv/
+
+# ── Environment Variables ─────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+nohup.out
+crawl_*.log
+scheduler.log
+
+# ── Debug output ──────────────────────────────────────────────────────────────
+raw_product.json
+
+# ── Typesense — binary and archive, never commit these ───────────────────────
+typesense-server
+typesense-server-*
+*.tar.gz
+*.md5.txt
+
+# ── Next.js ───────────────────────────────────────────────────────────────────
+.next/
+frontend/.next/
+out/
+frontend/out/
+
+# ── Node ──────────────────────────────────────────────────────────────────────
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db

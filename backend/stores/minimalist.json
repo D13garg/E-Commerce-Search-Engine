@@ -1,0 +1,44 @@
+{
+  "name": "minimalist",
+  "display_name": "Minimalist",
+  "base_url": "https://beminimalist.co",
+  "platform": "shopify",
+  "currency": "INR",
+  "discovery": {
+    "method": "shopify_collection_api",
+    "collection_handle": "all",
+    "page_size": 250
+  },
+  "field_map": {
+    "title": "title",
+    "brand": "vendor",
+    "slug": "handle",
+    "sku": "variants[0].sku",
+    "image": "images[0].src",
+    "category": "product_type"
+  },
+  "variant_options": {
+    "size_option": "option1",
+    "shipping_keywords": [
+      "shipping",
+      "ship",
+      "instant",
+      "same day",
+      "days",
+      "hours",
+      "eta"
+    ]
+  },
+  "category_map": {
+    "serum": "Serums",
+    "moisturizer": "Moisturizers",
+    "cleanser": "Cleansers",
+    "sunscreen": "Sunscreen",
+    "toner": "Toners",
+    "gift": "Gift Sets"
+  },
+  "crawl": {
+    "delay_seconds": 1.0,
+    "max_retries": 3
+  }
+}
